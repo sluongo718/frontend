@@ -53,3 +53,5 @@ class MenuItemForm extends Component {
     }
 
 }
+
+export default MenuItemForm
