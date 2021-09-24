@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {addMenuItem} from '../actions/menuItemActions'
 
 class MenuItemForm extends Component {
 
@@ -10,8 +11,20 @@ class MenuItemForm extends Component {
     }
 
     handleChange = (event) => {
+        
         this.setState({
             [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+      
+        event.preventDefault()
+        this.props.addMenuItem(this.state)
+        this.setState({
+            name: "",
+            body: "",
+            image: ""
         })
     }
 
@@ -20,7 +33,7 @@ class MenuItemForm extends Component {
     render(){
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"
                         name="name"
@@ -36,7 +49,7 @@ class MenuItemForm extends Component {
                         onChange={this.handleChange} 
                         placeholder="Description"
                     />
-                                        <br></br>
+                     <br></br>
                     <input
                         type="text"
                         name="image"
@@ -54,4 +67,4 @@ class MenuItemForm extends Component {
 
 }
 
-export default MenuItemForm
+export default connect(null, {addMenuItem})(MenuItemForm)
