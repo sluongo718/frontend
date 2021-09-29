@@ -1,8 +1,9 @@
 export default function (state = {menuItems: []}, action) {
-        console.log(action)
+        
     switch(action.type) {
-
+     
         case "GET_MENUITEMS":
+            console.log("GET menu items", state, action)
             return {
                 state,
                 menuItems: action.payload

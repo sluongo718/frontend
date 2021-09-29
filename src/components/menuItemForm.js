@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {addMenuItem} from '../actions/menuItemActions'
 
 class MenuItemForm extends Component {
+    
 
     state = {
         name: "",
@@ -31,6 +32,8 @@ class MenuItemForm extends Component {
 
 
     render(){
+
+        
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
