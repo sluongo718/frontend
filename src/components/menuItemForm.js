@@ -8,7 +8,9 @@ class MenuItemForm extends Component {
     state = {
         name: "",
         body: "",
-        image: ""
+        image: "",
+        category_type: "",
+        subcategory_type: ""
     }
 
     handleChange = (event) => {
@@ -25,7 +27,9 @@ class MenuItemForm extends Component {
         this.setState({
             name: "",
             body: "",
-            image: ""
+            image: "",
+            category_type: "",
+            subcategory_type: ""
         })
     }
 
@@ -61,6 +65,12 @@ class MenuItemForm extends Component {
                         placeholder="image"
                     />
                     <br></br>
+                    <select value={this.state.category_type} name="category_type" onChange={this.handleChange} >
+                        <option value="appetizer">Appetizers</option>
+                        <option value="entree">Entree</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                    <br></br>
                     <input type="submit" />
 
                 </form>
@@ -71,3 +81,12 @@ class MenuItemForm extends Component {
 }
 
 export default connect(null, {addMenuItem})(MenuItemForm)
+
+{/* <label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select> */}

@@ -7,7 +7,7 @@ class MenuItems extends Component {
  
     renderItems = () => {
         console.log(" MenuItemsView", this.props.menuItems)
-         return this.props.menuItems.map((item, id) =>  <MenuItem key={id} name={item.name} body={item.body} />)    
+         return this.props.menuItems.map((item, id) =>  <MenuItem key={id} name={item.name} body={item.body} img={item.image} />)    
     } 
 
     render(){
