@@ -66,9 +66,20 @@ class MenuItemForm extends Component {
                     />
                     <br></br>
                     <select value={this.state.category_type} name="category_type" onChange={this.handleChange} >
+                    <option value="">select category</option>
                         <option value="appetizer">Appetizers</option>
                         <option value="entree">Entree</option>
                         <option value="dessert">Dessert</option>
+                    </select>
+                    <br></br>
+                    <select value={this.state.subcategory_type} name="subcategory_type" onChange={this.handleChange} >
+                    <option value="">select Subcategory</option>
+                        <option value="protien">protien</option>
+                        <option value="fish">fish</option>
+                        <option value="shellfish">shellfish</option>
+                        <option value="pasta">pasta</option>
+                        <option value="sandwich">sandwich</option>
+                        <option value="other">other</option>
                     </select>
                     <br></br>
                     <input type="submit" />
@@ -81,12 +92,3 @@ class MenuItemForm extends Component {
 }
 
 export default connect(null, {addMenuItem})(MenuItemForm)
-
-{/* <label for="cars">Choose a car:</label>
-
-<select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select> */}
