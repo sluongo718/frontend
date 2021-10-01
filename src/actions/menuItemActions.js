@@ -25,3 +25,13 @@ export const addMenuItem = (menuItem) => {
 
     }
 }
+
+export const deleteMenuItem = (id) => {
+    return(dispatch) => {
+        fetch(`http://localhost:3000/menu_items/${id}`, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then(() => dispatch({type: "DELETE_ITEM", payload: id}))
+    }
+}

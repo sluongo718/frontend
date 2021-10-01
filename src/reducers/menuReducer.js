@@ -14,6 +14,11 @@ export default function (state = {menuItems: []}, action) {
                 ...state, menuItems: [...state.menuItems, action.payload]
             }
 
+            case "DELETE_ITEM": 
+            return {
+                ...state, menuItems: [...state.menuItems.filter((item) => item.id !== action.payload)]
+            }
+
         default: 
             return state
     }

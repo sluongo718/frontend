@@ -18,6 +18,7 @@ function App() {
             <Route  exact path="/menuForm" component={menuItemForm} />
             <Route exact path="/menuItems" component={MenuContainer}  />
             <Route exact path="/menuItem" component={menuItem} />
+            <Route exact path="/menuItem/:id" component={menuItem} />
         </Switch>
     </div>
   );
