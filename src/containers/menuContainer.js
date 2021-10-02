@@ -6,7 +6,7 @@ import MenuItems from "../components/menuItems";
 import MenuItem from "../components/menuItem";
 import {getMenuItems} from "../actions/menuItemActions";
 import homePage from "../components/homePage";
-import entrees from "../components/entrees";
+import Entrees from "../components/entrees";
 
 
 
@@ -21,14 +21,14 @@ class MenuItemContainer extends Component {
     render(){ 
         return (
             <div>
-                MenuContainer
+              
                 {/* <MenuItems menuItems={this.props.menuItems} /> */}
                 <Switch>
                     <Route exact path="/" component={homePage} />
                     <Route  exact path="/menuForm" component={menuItemForm} />
                     <Route exact path="/menuItems" render={(props) => <MenuItems menuItems={this.props.menuItems} /> }  />
                     <Route exact path="/menuItem/:id" render={(routerProps) => <MenuItem {...routerProps} items={this.props.menuItems} /> } />
-                    
+                    <Route exact path="/entrees" render={(props) => <Entrees {...props} items={this.props.menuItems} />} />
                 </Switch>
             </div>
         )
