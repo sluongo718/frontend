@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {deleteMenuItem} from '../actions/menuItemActions'
 
 const MenuItem = (item) => {
+    console.log("single item", item)
+    
 
     return (
        
