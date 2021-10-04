@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Entrees extends Component {
+class Desserts extends Component {
 
 
 
@@ -8,7 +8,7 @@ class Entrees extends Component {
         return(
             <div>
                 {   this.props.items.map((item) =>{
-                        if(item.category_type === "entree"){
+                        if(item.category_type === "dessert"){
                             return(
                                 <li key={item.id}>
                                     {item.name}
@@ -27,4 +27,4 @@ class Entrees extends Component {
     }
 }
 
-export default Entrees
+export default Desserts

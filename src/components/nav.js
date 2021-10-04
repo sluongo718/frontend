@@ -39,6 +39,45 @@ class Nav extends React.Component {
         >
           menu
         </NavLink>
+        <NavLink
+          to="/entrees"
+  
+          exact
+    
+          style={link}
+        
+          activeStyle={{
+            background: "darkred",
+          }}
+        >
+            Entrees
+        </NavLink>
+        <NavLink
+          to="/appetizers"
+  
+          exact
+    
+          style={link}
+        
+          activeStyle={{
+            background: "darkred",
+          }}
+        >
+            Appetizers
+        </NavLink>
+        <NavLink
+          to="/desserts"
+  
+          exact
+    
+          style={link}
+        
+          activeStyle={{
+            background: "darkred",
+          }}
+        >
+            Desserts
+        </NavLink>
         </div>
     }
 }
