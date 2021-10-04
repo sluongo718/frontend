@@ -1,0 +1,23 @@
+#greeting{
+    padding-top: 40px;
+    width: 800px;    
+    
+}
+
+#vidGret{
+    display: block;
+    margin: 0 auto;
+}
+
+#rightImg{
+    float: right;
+    width: 300px;
+    padding-right: 250px;
+ 
+
+    
+}
+
+#imgDiv{
+    background-color: #FFFFF0;
+}

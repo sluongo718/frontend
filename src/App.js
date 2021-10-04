@@ -11,21 +11,10 @@ import menuContainer from './containers/menuContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div >
         
         <Nav />
         <MenuContainer/>
-       
-        
-       
-         {/* <Switch>
-            <Route exact path="/" component={homePage} />
-            <Route  exact path="/menuForm" component={menuItemForm} />
-            <Route exact path="/menuItems" component={MenuContainer}  />
-            <Route exact path="/menuItem/:id" render={(routerProps) => <MenuItem {...routerProps} items={menuItems} /> } />
-        </Switch> */}
-        
-
     </div>
   );
 }
