@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import entree from '../css/entree.css'
 
 class Entrees extends Component {
 
@@ -6,16 +7,16 @@ class Entrees extends Component {
 
     render(){
         return(
-            <div>
+            <div id="itemList">
                 {   this.props.items.map((item) =>{
                         if(item.category_type === "entree"){
                             return(
                                 <li key={item.id}>
-                                    {item.name}
+                                    <div id="itemName">{item.name}</div>
                                     <br></br>
-                                    {item.body}
+                                    <div id="itemBody">{item.body}</div>
                                     <br></br>
-                                    <img src={item.image}></img>
+                                    <div id="itemPic" ><img width="500" src={item.image}></img></div>
                                     <br></br>
                                 </li>
                             )

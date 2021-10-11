@@ -37,7 +37,20 @@ class Nav extends React.Component {
             background: "darkred",
           }}
         >
-          menu
+          Menu
+        </NavLink>
+        <NavLink
+          to="/menuForm"
+  
+          exact
+    
+          style={link}
+        
+          activeStyle={{
+            background: "darkred",
+          }}
+        >
+            Menu Form
         </NavLink>
         <NavLink
           to="/entrees"

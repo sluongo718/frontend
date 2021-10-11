@@ -1,7 +1,6 @@
 #greeting{
     padding-top: 40px;
-    width: 800px;    
-    
+    width: 800px;       
 }
 
 #vidGret{
@@ -12,10 +11,7 @@
 #rightImg{
     float: right;
     width: 300px;
-    padding-right: 250px;
- 
-
-    
+    padding-right: 250px; 
 }
 
 #imgDiv{
