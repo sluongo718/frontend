@@ -8,12 +8,14 @@ import MenuItem from "./components/menuItem"
 import homePage from "./components/homePage";
 import Nav from "./components/nav";
 import menuContainer from './containers/menuContainer';
+import WaitListContainer from './containers/waitListContainer'
 
 function App() {
   return (
     <div > 
       <Nav />
       <MenuContainer/>
+      <WaitListContainer/>
     </div>
   );
 }
