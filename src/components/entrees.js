@@ -7,16 +7,16 @@ class Entrees extends Component {
 
     render(){
         return(
-            <div id="itemList">
+            <div class="itemList">
                 {   this.props.items.map((item) =>{
                         if(item.category_type === "entree"){
                             return(
                                 <li key={item.id}>
-                                    <div id="itemName">{item.name}</div>
+                                    <div class="itemName">{item.name}</div>
                                     <br></br>
-                                    <div id="itemBody">{item.body}</div>
+                                    <div class="itemBody">{item.body}</div>
                                     <br></br>
-                                    <div id="itemPic" ><img width="500" src={item.image}></img></div>
+                                    <div class="itemPic" ><img width="500" src={item.image}></img></div>
                                     <br></br>
                                 </li>
                             )

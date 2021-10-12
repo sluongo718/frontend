@@ -1,4 +1,4 @@
-#itemList{
+.itemList{
     background-color: salmon;
     margin: auto;
     width: 50%;
@@ -12,7 +12,7 @@ body{
     background-color: skyblue;
 }
 
-#itemName{
+.itemName{
     font-size: 30px;
     font-family: cursive;
     margin: auto;
@@ -22,11 +22,11 @@ body{
 
 }
 
-#itemBody{
-    margin-left: 300px;
+.itemBody{
+    margin-left: 150px;
     font-family: cursive;
 }
 
-#itemPic{
+.itemPic{
    margin-left: 150px;
 }

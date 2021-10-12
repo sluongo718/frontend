@@ -11,10 +11,9 @@ import menuContainer from './containers/menuContainer';
 
 function App() {
   return (
-    <div >
-        
-        <Nav />
-        <MenuContainer/>
+    <div > 
+      <Nav />
+      <MenuContainer/>
     </div>
   );
 }

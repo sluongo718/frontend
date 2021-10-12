@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {addMenuItem} from '../actions/menuItemActions'
+import menuForm from '../css/menuForm.css'
 
 class MenuItemForm extends Component {
     
@@ -35,8 +36,9 @@ class MenuItemForm extends Component {
 
     render(){ 
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div id="mainDiv">
+                <h1 id="title">Menu Form</h1>
+                <form id="menuForm" onSubmit={this.handleSubmit}>
                     <input
                         type="text"
                         name="name"
@@ -45,13 +47,22 @@ class MenuItemForm extends Component {
                         placeholder="Enter Menu Item"
                     />
                     <br></br>
-                    <input
+                    <textarea
                         type="text"
                         name="body"
                         value={this.state.body}
                         onChange={this.handleChange} 
                         placeholder="Description"
+                        rows="6" cols="50"
                     />
+                    {/* <input
+                        type="text"
+                        name="body"
+                        value={this.state.body}
+                        onChange={this.handleChange} 
+                        placeholder="Description"
+                        
+                    /> */}
                      <br></br>
                     <input
                         type="text"

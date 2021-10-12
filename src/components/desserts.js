@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-
+import entree from '../css/entree.css'
 class Desserts extends Component {
 
 
 
     render(){
         return(
-            <div>
+            <div class="itemList">
                 {   this.props.items.map((item) =>{
                         if(item.category_type === "dessert"){
                             return(
                                 <li key={item.id}>
-                                    {item.name}
+                                    <div class="itemName">{item.name}</div>
                                     <br></br>
-                                    {item.body}
+                                    <div class="itemBody">{item.body}</div>
                                     <br></br>
-                                    <img src={item.image}></img>
+                                    <div class="itemPic" ><img width="500" src={item.image}></img></div>
                                     <br></br>
                                 </li>
                             )
