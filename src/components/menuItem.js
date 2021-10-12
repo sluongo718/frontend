@@ -9,7 +9,7 @@ const MenuItem = (item) => {
     return (
        
         <div>menu item  
-            <li>
+            <li class="itemList">
                 {item.name}
                 <br></br>
                 {item.body}

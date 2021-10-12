@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import {connect} from 'react-redux'
 import MenuItem from '../components/menuItem';
 import {getMenuItems,deleteMenuItem} from '../actions/menuItemActions'
+import itemList from '../css/itemList.css'
+
 class MenuItems extends Component {
 
  
@@ -23,12 +25,9 @@ class MenuItems extends Component {
 
     render(){
         return ( 
-            // <ol>
-            //     {this.renderItems()}
-            // </ol>
-            <div>
+            <div  >
                 {this.props.menuItems.map((item) =>(
-                    <li key={item.id}>
+                    <li class="list" key={item.id}>
                         {item.name}
                         <br></br>
                         {item.body}

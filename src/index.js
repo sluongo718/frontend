@@ -21,7 +21,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
 {/* <React.StrictMode>
 <App />
 </React.StrictMode>, */}
