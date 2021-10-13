@@ -19,6 +19,11 @@ export default function menuReducer(state = {menuItems: [], waitList: []}, actio
                 ...state, menuItems: [...state.menuItems.filter((item) => item.id !== action.payload)]
             }
 
+        case "ADD_PARTY":
+            return {
+                ...state, waitList: [...state.waitList, action.payload]
+            }
+
         default: 
             return state
     }
