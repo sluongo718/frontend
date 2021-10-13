@@ -20,7 +20,9 @@ export default function menuReducer(state = {menuItems: [], waitList: []}, actio
             }
 
         case "ADD_PARTY":
+            debugger
             return {
+             
                 ...state, waitList: [...state.waitList, action.payload]
             }
 

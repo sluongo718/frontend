@@ -36,7 +36,7 @@ export const deleteMenuItem = (id) => {
 }
 
 export const addParty = (party) => {
-    
+    console.log("addparty", party)
     return (dispatch) => {
         fetch('http://localhost:3000/wait_lists', {
             method: "POST",

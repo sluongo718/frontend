@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
+import {addParty} from '../actions/menuItemActions'
 
 class WaitListForm extends Component {
 
@@ -14,9 +15,17 @@ class WaitListForm extends Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addParty(this.state)
+        this.setState({
+            name: ""
+        })
+    }
+
     render(){
         return <div>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"
                         name="name"
@@ -34,4 +43,4 @@ class WaitListForm extends Component {
 
 }
 
-export default WaitListForm
+export default connect(null, {addParty})(WaitListForm)
