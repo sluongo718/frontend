@@ -24,6 +24,7 @@ class MenuItems extends Component {
     }
 
     render(){
+        console.log("menuitems", this.props)
         return ( 
             <div  >
                 {this.props.menuItems.map((item) =>(

@@ -50,3 +50,13 @@ export const addParty = (party) => {
 
     }
 }
+
+export const getWaitList = () => {
+  
+    return (dispatch) => {
+        fetch('http://localhost:3000/menu_items')
+        .then(res => res.json())
+        .then(waitList => dispatch({type: "GET_MENUITEMS", payload: waitList}))
+       
+    }
+}

@@ -41,6 +41,7 @@ class MenuItemContainer extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log("global state", state)
     return {
         menuItems: state.menuItems
     }

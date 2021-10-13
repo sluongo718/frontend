@@ -1,4 +1,4 @@
-export default function menuReducer(state = {menuItems: [], waitList: []}, action) {
+export default function menuReducer(state = {menuItems: []}, action) {
         
     switch(action.type) {
      
@@ -19,12 +19,12 @@ export default function menuReducer(state = {menuItems: [], waitList: []}, actio
                 ...state, menuItems: [...state.menuItems.filter((item) => item.id !== action.payload)]
             }
 
-        case "ADD_PARTY":
-            debugger
-            return {
+        // case "ADD_PARTY":
+        //     debugger
+        //     return {
              
-                ...state, waitList: [...state.waitList, action.payload]
-            }
+        //         ...state, waitList: [...state.waitList, action.payload]
+        //     }
 
         default: 
             return state

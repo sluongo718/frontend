@@ -8,9 +8,17 @@ import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import menuReducer from './reducers/menuReducer';
 
-const store = createStore(menuReducer, applyMiddleware(thunk))
+import { combineReducers } from "redux";
+import menuReducer from './reducers/menuReducer';
+import waitListReducer from './reducers/waitListReducer'
+
+const rootReducer = combineReducers({
+   menuReducer: menuReducer,
+  waitListReducer: waitListReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
