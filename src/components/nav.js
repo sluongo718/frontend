@@ -91,6 +91,19 @@ class Nav extends React.Component {
         >
             Desserts
         </NavLink>
+        <NavLink
+          to="/waitlist"
+  
+          exact
+    
+          style={link}
+        
+          activeStyle={{
+            background: "darkred",
+          }}
+        >
+            Waitlist
+        </NavLink>
         </div>
     }
 }

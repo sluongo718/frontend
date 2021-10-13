@@ -1,4 +1,4 @@
-export default function (state = {menuItems: []}, action) {
+export default function menuReducer(state = {menuItems: [], waitList: []}, action) {
         
     switch(action.type) {
      
