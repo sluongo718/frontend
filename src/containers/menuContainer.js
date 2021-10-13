@@ -26,9 +26,9 @@ class MenuItemContainer extends Component {
               
                 {/* <MenuItems menuItems={this.props.menuItems} /> */}
                 <Switch>
-                    <Route exact path="/" component={homePage} />
+                    {/* <Route exact path="/" component={homePage} /> */}
                     <Route  exact path="/menuForm" component={menuItemForm} />
-                    <Route exact path="/menuItems" render={(props) => <MenuItems menuItems={this.props.menuItems} /> }  />
+                    {/* <Route exact path="/menuItems" render={(props) => <MenuItems menuItems={this.props.menuItems} /> }  /> */}
                     <Route exact path="/menuItem/:id" render={(routerProps) => <MenuItem {...routerProps} items={this.props.menuItems} /> } />
                     <Route exact path="/entrees" render={(props) => <Entrees {...props} items={this.props.menuItems} />} />
                     <Route exact path="/appetizers" render={(props) => <Appetizer {...props} items={this.props.menuItems} />} />
@@ -40,11 +40,11 @@ class MenuItemContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
-    console.log("global state", state)
-    return {
-        menuItems: state.menuItems
-    }
-}
+// const mapStateToProps = state => {
+//     console.log("global state", state)
+//     return {
+//         menuItems: state.menuItems
+//     }
+// }
 
-export default connect(mapStateToProps, {getMenuItems})(MenuItemContainer)
+export default connect(null, {getMenuItems})(MenuItemContainer)

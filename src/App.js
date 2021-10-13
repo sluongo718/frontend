@@ -1,9 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from "react-redux";
+import React, { Component } from "react";
 
 import menuItemForm from './components/menuItemForm'
 import MenuContainer from './containers/menuContainer'
-import menuItems from "./components/menuItems"
+import MenuItems from "./components/menuItems"
 import MenuItem from "./components/menuItem"
 import homePage from "./components/homePage";
 import Nav from "./components/nav";
@@ -14,15 +16,28 @@ import WaitListContainer from './containers/waitListContainer'
 
 
 
-function App() {
-  return (
-    <div > 
-      <Nav />
-      <MenuContainer/>
-      <WaitListContainer/>
+class App extends Component {
+  render(){
+    return (
+      <div > 
+        <Nav />
+        <MenuContainer/>
+        <WaitListContainer/>
+          <Switch>
+          <Route exact path="/" component={homePage} />
+          <Route exact path="/menuItems" render={(props) => <MenuItems menuItems={this.props.menuItems} /> }  />
+          </Switch>
+      </div>
+    );
+  }
 
-    </div>
-  );
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log("global state", state.menuReducer.menuItems)
+  return {
+      menuItems: state.menuReducer.menuItems
+  }
+}
+
+export default connect(mapStateToProps)(App)
