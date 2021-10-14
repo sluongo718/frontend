@@ -14,7 +14,7 @@ export default function waitListReducer(state = {waitList: []}, action){
 
             case "DELETE_PARTY": 
             return {
-                ...state, menuItems: [...state.waitList.filter((party) => party.id !== action.payload)]
+                ...state, waitList: [...state.waitList.filter((party) => party.id !== action.payload)]
             }
 
             default: return state
