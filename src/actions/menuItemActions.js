@@ -60,3 +60,13 @@ export const getWaitList = () => {
        
     }
 }
+
+export const deleteParty = (id) => {
+    return(dispatch) => {
+        fetch(`http://localhost:3000/wait_lists/${id}`, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then(() => dispatch({type: "DELETE_PARTY", payload: id}))
+    }
+}

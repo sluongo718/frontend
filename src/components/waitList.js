@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 class WaitList extends Component {
 
 
+
     render(){
         return <div>
            {this.props.waitList.map((party) =>(

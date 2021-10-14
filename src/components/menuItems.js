@@ -6,19 +6,6 @@ import itemList from '../css/itemList.css'
 
 class MenuItems extends Component {
 
- 
-    // renderItems = () => {
-
-    //      return this.props.menuItems.map((item) =>  
-    //         <MenuItem key={item.id}  
-    //             name={item.name} 
-    //             body={item.body} 
-    //             img={item.image}
-    //             deleteItem={this.props.deleteMenuItem}
-    //         />)    
-    // } 
-
-
     handleclick = (item) => {
         this.props.deleteMenuItem(item.id);
     }
