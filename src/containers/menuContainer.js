@@ -41,7 +41,7 @@ class MenuItemContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("global state", state)
+    console.log("global state", state.waitListReducer)
     return {
         menuItems: state.menuReducer.menuItems
     }

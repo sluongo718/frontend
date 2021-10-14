@@ -1,7 +1,7 @@
 export default function waitListReducer(state = {waitList: []}, action){
     switch(action.type){
 
-        case "GET_MENUITEMS":
+        case "GET_WAITLIST":
             return {
                 state,
                 waitList: action.payload
