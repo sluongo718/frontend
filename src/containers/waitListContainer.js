@@ -9,7 +9,7 @@ import {getWaitList} from "../actions/menuItemActions";
 class WaitListContainer extends Component {
 
   componentDidMount() {
-    console.log( "waitlist", this.props.getWaitList())
+    console.log( "waitlist", this.props.waitList)
     this.props.getWaitList()
   }
 
