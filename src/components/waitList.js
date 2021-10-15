@@ -9,6 +9,10 @@ class WaitList extends Component {
         this.props.deleteParty(party.id)
     }
 
+     waitTime = () => {
+        return  this.props.waitList.length * 5
+    }
+ 
     render(){
         return <div>
            {this.props.waitList.map((party) =>(
@@ -16,6 +20,7 @@ class WaitList extends Component {
                    {party.name} <button id={party.id} onClick={() => this.handleclick(party) } >Delete Party</button>
                </li>
            ))}
+              <h2>Wait Time {this.waitTime()} Minutes!</h2>  
         </div>
     }
 

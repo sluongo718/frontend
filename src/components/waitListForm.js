@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
 import {addParty} from '../actions/menuItemActions'
+import wait from '../css/wait.css'
 
 class WaitListForm extends Component {
 
@@ -24,8 +25,11 @@ class WaitListForm extends Component {
     }
 
     render(){
-        return <div>
-            <form onSubmit={this.handleSubmit}>
+        return <div id="wait" >
+
+            <h1>Add party to Wait List</h1>
+
+            <form id="waitForm" onSubmit={this.handleSubmit}>
                     <input
                         type="text"
                         name="name"
