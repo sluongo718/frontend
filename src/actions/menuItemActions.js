@@ -1,10 +1,10 @@
 
 export const getMenuItems = () => {
-  
     return (dispatch) => {
         fetch('http://localhost:3000/menu_items')
         .then(res => res.json())
-        .then(menuItems => dispatch({type: "GET_MENUITEMS", payload:   menuItems}))
+        .then(menuItems => {
+                dispatch({type: "GET_MENUITEMS", payload:   menuItems})})
        
     }
 }
@@ -35,6 +35,22 @@ export const deleteMenuItem = (id) => {
     }
 }
 
+export const UpdateMenuItem = (id, likes) => {
+    console.log("update actions Likes", id, likes)
+    return(dispatch) => {
+        fetch(`http://localhost:3000/menu_items/${id}`, {
+            method: "PUT",
+            body: JSON.stringify(likes),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })  
+        .then(resp => resp.json())
+        .then(() => dispatch({type: "UPDATE_ITEM", payload: [id, likes]}))
+    }
+    
+}
+
 export const addParty = (party) => {
     console.log("addparty", party)
     return (dispatch) => {
@@ -50,6 +66,8 @@ export const addParty = (party) => {
 
     }
 }
+
+
 
 export const getWaitList = () => {
   

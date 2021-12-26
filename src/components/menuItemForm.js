@@ -55,14 +55,6 @@ class MenuItemForm extends Component {
                         placeholder="Description"
                         rows="6" cols="50"
                     />
-                    {/* <input
-                        type="text"
-                        name="body"
-                        value={this.state.body}
-                        onChange={this.handleChange} 
-                        placeholder="Description"
-                        
-                    /> */}
                      <br></br>
                     <input
                         type="text"

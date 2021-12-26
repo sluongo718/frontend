@@ -3,26 +3,55 @@ import {connect} from 'react-redux'
 import MenuItem from '../components/menuItem';
 import {getMenuItems,deleteMenuItem} from '../actions/menuItemActions'
 import itemList from '../css/itemList.css'
+import { Link } from "react-router-dom";
+import LikeButton from '../components/likeButton'
+
 
 class MenuItems extends Component {
+
+    state = {
+        searchTerm: '',
+      }
+
+      handleSearch = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+      }
 
     handleclick = (item) => {
         this.props.deleteMenuItem(item.id);
     }
 
     render(){
-        console.log("menuitems", this.props)
+
+        let showItems = this.props.menuItems; 
+
+        if(this.state.searchTerm !== ""){
+          
+            showItems =  [...this.props.menuItems].filter((item) =>
+              item.name.includes(this.state.searchTerm)
+            ) ?? [];
+          }
+
         return ( 
-            <div  >
-                {this.props.menuItems.map((item) =>(
-                    <li class="list" key={item.id}>
-                        {item.name}
-                        <br></br>
-                        {item.body}
-                        <br></br>
+            <div className="list">  
+
+                    <input 
+                    placeholder="search"
+                    name="searchTerm"
+                    type="text"
+                    value={this.state.searchTerm}
+                    onChange={this.handleSearch}
+                    />
+
+                {showItems.map((item) =>(
+                    <li  key={item.id}>
+                        <Link to={`/menuItem/${item.id}`} >{item.name}</Link>
+                        <p>{item.body}</p>
                         <img src={item.image}></img>
-                        <br></br>
-                        <button id={item.id} onClick={() => this.handleclick(item)}>delete </button>
+                        <button id={item.id} onClick={() => this.handleclick(item)}>delete</button>
+                        <LikeButton item={item}/>
                     </li>
                 ))}
             </div>
@@ -31,3 +60,9 @@ class MenuItems extends Component {
 }
 
 export default connect(null, {deleteMenuItem})(MenuItems)
+
+//like button for each item
+//make a button
+// make a function to handle that button
+// make a local state to handle likes on each one
+

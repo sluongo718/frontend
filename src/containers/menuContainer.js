@@ -13,9 +13,11 @@ import Desserts from "../components/desserts"
 
 
 
+
 class MenuItemContainer extends Component {
 
     componentDidMount() {
+  
         this.props.getMenuItems();
     }
      
@@ -23,12 +25,10 @@ class MenuItemContainer extends Component {
     render(){ 
         return (
             <div>
-              
-                {/* <MenuItems menuItems={this.props.menuItems} /> */}
                 <Switch>
-                    {/* <Route exact path="/" component={homePage} /> */}
                     <Route  exact path="/menuForm" component={menuItemForm} />
-                    <Route exact path="/menuItems" render={(props) => <MenuItems menuItems={this.props.menuItems} /> }  />
+                    {/* <Route exact path="/menuForm" render={(props) => <MenuItemForm menuItems={this.props.menuItems} /> }  /> */}
+                    <Route exact path="/menuItems" render={(props) => <MenuItems {...props} menuItems={this.props.menuItems} /> }  />
                     <Route exact path="/menuItem/:id" render={(routerProps) => <MenuItem {...routerProps} items={this.props.menuItems} /> } />
                     <Route exact path="/entrees" render={(props) => <Entrees {...props} items={this.props.menuItems} />} />
                     <Route exact path="/appetizers" render={(props) => <Appetizer {...props} items={this.props.menuItems} />} />
@@ -41,7 +41,6 @@ class MenuItemContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("global state", state.waitListReducer)
     return {
         menuItems: state.menuReducer.menuItems
     }

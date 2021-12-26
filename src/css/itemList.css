@@ -1,4 +1,40 @@
-.list{
-    margin-left: 450px;
-    margin-top: 50px;
+.list  {
+    margin: auto;
+    padding: 25px;
+    text-align: center;
+    font-style: italic;
 }
+
+.list li {
+    display: block;
+    margin: 0 auto;
+    width: 70%; 
+    border-bottom: 1px solid salmon;
+}
+
+.list a  {
+    display: block;
+    text-align: center;
+    color: white;
+    max-width: 20%;
+    margin: auto;
+    text-transform: capitalize;
+}
+
+.list a:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+.list img  {
+    display: block;
+    margin: 0 auto;
+}
+
+.list img, button {
+    border-radius: 10px;
+}
+
+/* .list button {
+    display: inline ;
+} */

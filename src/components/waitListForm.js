@@ -16,16 +16,25 @@ class WaitListForm extends Component {
         })
     }
 
+    waitTime = () => {
+        return  this.props.waitList.length * 5
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
+        alert("Thank You, your party has been added to the wait!")
         this.props.addParty(this.state)
         this.setState({
             name: ""
         })
     }
 
+
+
+
+
     render(){
-        return <div id="wait" >
+        return <div class="wait" >
 
             <h1>Add party to Wait List</h1>
 
@@ -42,6 +51,7 @@ class WaitListForm extends Component {
                         value="Add Party"
                     />
             </form>
+            <h2>Wait Time {this.waitTime()} Minutes!</h2> 
         </div>
     }
 

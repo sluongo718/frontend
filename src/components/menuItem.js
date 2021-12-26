@@ -1,20 +1,25 @@
-import React from "react";
+// import React from "react";
 import {connect} from 'react-redux'
 import {deleteMenuItem} from '../actions/menuItemActions'
+import itemList from '../css/itemList.css'
+import React, { useState } from 'react';
 
-const MenuItem = (item) => {
-    console.log("single item", item)
-    
+
+const MenuItem = (props) => {
+    console.log("single item", props.items)
+
+    const [likes, setLikes] = useState(0);
+
+    let item = props.items.filter(mItem => mItem.id == props.match.params.id)[0]
 
     return (
        
         <div>menu item  
-            <li class="itemList">
+            <li class="list">
                 {item.name}
-                <br></br>
-                {item.body}
-                <br></br>
-                <img src={item.img} />
+                {item.name}
+                {item.name}
+                <button>like</button>
          
             </li>
         </div>
